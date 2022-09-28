@@ -22,6 +22,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Avatar from "@mui/material/Avatar";
 import logo from "./imagenes/logo.jpg";
+import agua from "../Media/agua.jpg"
+import { Container } from "@mui/system";
+import { CardMedia } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -117,6 +120,7 @@ export default function Menu() {
       </AppBar>
       <Drawer
         sx={{
+         
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
@@ -164,13 +168,17 @@ export default function Menu() {
           ))}
         </List>
       </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
-        <Typography paragraph>
-          These are Pictures of products
-        </Typography>
-       
-      </Main>
+    
+     <Container sx={{marginTop:"150px"}} >
+         <Box  sx={{ p: 2, border: '1px dashed grey',backgroundColor: 'primary.dark', }}> 
+          <CardMedia component="img"height="140" image={agua}/>
+        </Box>
+        <Box  sx={{ p: 2, border: '1px dashed grey',backgroundColor: 'primary.dark', }}/>
+        <Box  sx={{ p: 2, border: '1px dashed grey',backgroundColor: 'primary.dark', }}/>
+   
+     </Container>
+     
+        
     </Box>
     </ThemeProvider>
   );
